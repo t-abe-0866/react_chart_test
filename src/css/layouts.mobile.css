@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+
+
+/*
+  Arranger
+*/
+[data-layout="arranger"][data-variant-mobile="^wrap"] {
+  grid-template: "row" auto / 1fr;
+}
+
+[data-layout="arranger"][data-variant-mobile="^wrap"] > [data-position] {
+  grid-area: auto;
+}
+
+
+
+/*
+  Graph
+*/
+[data-layout="graph"] > [data-part="body-items"] {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: 
+    "graph graph"
+    "locator locator"
+    "nav-left nav-right";
+}
+
+[data-layout="graph"] > [data-part="body-items"] [data-part="nav-left"] {
+  grid-area: nav-left;
+}
+
+[data-layout="graph"] > [data-part="body-items"] [data-part="nav-right"] {
+  grid-area: nav-right;
+}
+
+[data-layout="graph"] > [data-part="body-items"] [data-part="graph"] {
+  grid-area: graph;
+  grid-column: span 2;
+}
+
+[data-layout="graph"] > [data-part="body-items"] [data-part="locator"] {
+  grid-area: locator;
+  grid-column: span 2;
+}

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+
+
+h1#site-name {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1#site-name img {
+  height: 4rem;
+  margin: 0 2rem;
+}
+
+main {
+  background: var(--color-theme-green);
+  padding: 0;
+  margin: 0;
+  height: calc(100vh - (var(--default-margin) * 2 + 1rem + 1px));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#layout {
+  max-width: 640px;
+  width: 100%;
+}
+
+#credentials {
+  background: #ffffff;
+  padding: var(--default-margin) calc(var(--default-margin) * 2);
+  border-radius: calc(var(--default-border-radius) * 2);
+}

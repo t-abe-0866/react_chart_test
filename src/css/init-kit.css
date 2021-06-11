@@ -1,0 +1,512 @@
+@charset "UTF-8";
+
+:root {
+  --ff-default: "Hiragino Kaku Gothic Pro", "Hiragino Kaku Gothic Pro W3", "游ゴシック", "メイリオ", "ＭＳ Ｐゴシック", sans-serif, "Font Awesome 5 Pro", "Font Awesome 5 Brands", FontAwesome;
+  --ff-serif: "Hiragino Mincho Pro", "Hiragino Mincho Pro W3", "游明朝", "ＭＳ Ｐ明朝", serif, "Font Awesome 5 Pro", "Font Awesome 5 Brands", "FontAwesome";
+
+  font-family: var(--ff-default);
+  -webkit-overflow-scrolling: touch;
+}
+
+::before, ::after,
+input, button, textarea {
+  font-family: inherit;
+}
+
+html, body, header, footer, article, section, nav, aside /*, div */ { 
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/*
+table {
+  border-collapse: collapse;
+  margin-bottom: 2em;
+}
+
+table td > :last-child {
+  margin-bottom: 0;
+}
+
+table th,
+table td {
+  padding: 1em;
+}
+
+table th {
+  white-space: nowrap;
+  text-align: center;
+}
+*/
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em 0;
+  line-height: 1.25;
+}
+
+section {
+  margin-bottom: 4em;
+}
+
+section > :last-child {
+  margin-bottom: 0;
+}
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
+section section:last-of-type {
+  margin-bottom: 0;
+}
+
+p {
+  line-height: 1.5em;
+  margin: 0 0 1.5em 0;
+}
+
+main {
+  display: block;
+}
+
+address {
+  display: inline-block;
+  font-style: normal;
+}
+
+blockquote {
+  font-style: normal;
+  font-family: inherit;
+  margin: 0 0 1.5em 0;
+}
+
+img {
+  max-width: 100%;
+  /*vertical-align: bottom;*/
+  vertical-align: middle;
+  border: none;
+  margin: 0;
+  padding: 0;
+  image-rendering: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.9em;
+  margin: 1em 0;
+}
+
+*:hover,
+*:active,
+*:visited,
+*:focus {
+  outline: none;
+}
+
+a {
+  outline: none;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-left: 1em;
+}
+
+ul,
+ol {
+  vertical-align: middle;
+  margin: 0 0 1.5em 2em;
+  padding: 0;
+}
+
+ul li,
+ol li {
+  list-style-position: outside;
+  margin: 0 0 0.5em 0;
+  padding: 0;
+}
+
+ul > li {
+  margin-bottom: 0.25em;
+}
+
+ul > li:last-child {
+  margin-bottom: 0;
+}
+
+ul > li > *:last-child {
+  margin-bottom: 0;
+}
+
+ul li > ul {
+  margin-top: 0.25em;
+}
+
+ul.collapse > li,
+ol.collapse > li {
+  margin-bottom: 0;
+}
+
+li:last-of-type {
+  margin-bottom: 0;
+}
+
+dl {
+  margin: 0 0 1em 0;
+}
+
+dl dt {
+  font-weight: bold;
+  vertical-align: middle;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  word-break: break-word;
+}
+
+dl dt:first-child {
+  margin-top: 0;
+}
+
+dl dd {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+  word-break: break-word;
+}
+
+dl dd:last-of-type {
+  margin-bottom: 0;
+}
+
+dl dd > *:last-child {
+  margin-bottom: 0;
+}
+
+hr {
+  height: 1px;
+  line-height: 1px;
+  margin: 1em 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  /*color: #ccc;
+  background-color: #ccc;*/
+  border-width: 0;
+  font-family: '';
+  border-bottom: 1px dashed #aaa;
+}
+
+small {
+  font-size: 1rem;
+}
+
+i, em {
+  font-style: normal;
+}
+
+em {
+  font-weight: bold;
+}
+
+
+/*
+  Classes
+*/
+.clip {
+  overflow: hidden;
+}
+
+.shadow {
+  display: none;
+}
+
+.spaced {
+  /*padding: 1em;*/
+  margin: 0 1rem;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+ul.no-bullets,
+ol.no-bullets {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.no-bullets > li:before {
+  content: none;
+}
+
+.no-bullets > li {
+  padding-left: 0;
+  text-indent: 0;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.float-left, .alignleft {
+  float: left;
+  margin: 0 1.25em 1.25em 0;
+}
+
+.float-right, .alignright {
+  float: right;
+  margin: 0 0 1.25em 1.25em;
+}
+
+.float-wrap {
+  display: inline-block;
+  width: 100%;
+}
+
+/*
+.block {
+  display: block !important;
+}
+
+.il-b {
+  display: inline-block !important;
+}
+
+.w-max {
+  width: 100%;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+.follow {
+  width: 100%;
+}
+
+.h-max {
+  height: 100%;
+}
+*/
+
+
+
+
+
+ul.horizontal {
+  display: inline-block;
+  width: 100%;
+  margin-left: 0;
+  font-size: 0;
+}
+
+ul.horizontal > li {
+  /* float: left; */
+  display: inline;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+ul.horizontal.separate > li {
+  margin-right: 1em;
+}
+
+ul.horizontal.separate > li:last-child {
+  margin-right: 0;
+}
+
+
+
+/*
+  Pseudo-Image-Map
+*/
+ul.pseudo-image-map {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+ul.pseudo-image-map li {
+  position: absolute;
+  display: inline-block;
+  height: auto;
+  width: auto;
+  z-index: 100;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+ul.pseudo-image-map * {
+  line-height: normal !important;
+}
+
+ul.pseudo-image-map li img {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+ul.pseudo-image-map.show {
+  background-color: rgba(0,0,0,0.25);
+}
+
+ul.pseudo-image-map.show li {
+  background-color: rgba(255,0,0,0.25);
+}
+
+ul.pseudo-image-map li > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*
+  Display Control
+*/
+[data-display~="large-show"],
+[data-display~="large-block"],
+[data-display~="large-inline"],
+[data-display~="medium-show"],
+[data-display~="medium-block"],
+[data-display~="medium-inline"],
+[data-display~="small-show"],
+[data-display~="small-block"],
+[data-display~="small-inline"] {
+  display: none;
+}
+
+[data-display~="hide"] {
+  display: none;
+}
+
+
+
+/*
+  Align Control
+*/
+[data-align~=""] {
+
+}
+
+
+/*
+  Width Control
+*/
+[data-width~=""] {
+
+}
+
+
+
+/*
+  Space
+*/
+[data-spacing] {
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-size: var(--flex-space-size);
+}
+
+[data-spacing] > * {
+  font-size: 1rem;
+}
+
+[data-spacing~="1"] {
+  padding: 0 1em;
+}
+
+[data-spacing~="2"] {
+  padding: 0 2em;
+}
+
+[data-spacing~="3"] {
+  padding: 0 3em;
+}
+
+
+
+/*
+  Layer
+*/
+[data-layers] {
+  position: relative;
+  z-index: 0;
+}
+
+[data-layers] [data-layer] {
+  position: absolute;
+  z-index: 1;
+  /* width: 100%; */
+  width: auto;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+}
+
+[data-layers] [data-layer] .wfx {
+  height: 100%;
+}
+
+[data-layers] [data-layer-background] {
+  position: relative;
+  z-index: 0;
+}
+
+[data-layers] [data-layer-background] img {
+  width: 100%;
+}
+
+
+
+/*
+
+  Display: L
+
+*/
+
+
+
+
+/*
+
+  Display: M
+
+*/
+
+
+
+
+/*
+
+  Display: S
+
+*/

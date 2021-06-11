@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+
+
+/*
+  Table
+*/
+
+table[data-styled] tr [data-part="controls"] {
+  width: auto;
+}
+
+/* -- table variant: list-view */
+
+table[data-styled][data-appearance-mobile="list-view"] {
+  --heading-font-size: 0.8em;
+  --heading-padding: calc(var(--heading-font-size) * 0.5);
+  --heading-height: calc(var(--heading-font-size) + var(--heading-padding) * 2);
+  --table-cell-padding: 0.5em;
+  --controls-column-width: 4em;
+  --icon-column-width: 6em;
+  --table-data-columns: 1;
+  --table-data-column-setting: repeat(var(--table-data-columns), 1fr);
+
+  --merge-grid-rows: 1 / span 100;
+}
+
+/* -- variant: compact */
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile~="^compact"] {
+  --table-data-columns: 2;
+}
+
+
+
+table[data-styled][data-appearance-mobile="list-view"] thead {
+  display: none;
+}
+
+table[data-styled][data-appearance-mobile="list-view"] tr {
+  display: grid;
+  grid-gap: 0;
+  grid-template: 1fr / var(--table-data-column-setting);
+  border-color: var(--color-interface-static-light);
+  padding: 0.5em 0;
+}
+
+table[data-styled][data-appearance-mobile="list-view"] tbody {
+  border-top: 1px solid var(--color-interface-static-light);
+}
+
+table[data-styled][data-appearance-mobile="list-view"] tbody tr:nth-child(odd) {
+  background: none;
+}
+
+table[data-styled][data-appearance-mobile="list-view"] tr > td {
+  position: relative;
+}
+
+table[data-styled][data-appearance-mobile="list-view"] tr > td[data-scope] {
+  padding:
+    calc(var(--table-cell-padding) * 1.5 + var(--heading-height))
+    var(--table-cell-padding)
+    var(--table-cell-padding)
+    var(--table-cell-padding);
+}
+
+table[data-styled][data-appearance-mobile="list-view"] tr > td[data-scope]:before {
+  display: inline-block;
+  content: attr(data-scope);
+  font-size: var(--heading-font-size);
+  line-height: 1;
+  color: var(--color-interface-static-dark);
+  position: absolute;
+  top: var(--table-cell-padding);
+  left: 0;
+  padding: var(--heading-padding);
+  border: 1px solid var(--color-interface-static-dark);
+  border-radius: var(--default-border-radius);
+}
+
+table[data-styled][data-appearance-mobile="list-view"] tr > td:last-of-type {
+  /* padding-bottom: var(--table-cell-padding); */
+}
+
+/* -- variant: with controls */
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile*="^controls"] tr {
+  grid-template: 
+    1fr / 
+    var(--table-data-column-setting) minmax(var(--controls-column-width), max-content);
+}
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile*="^controls"] tr > td {
+  /* grid-column: 1 / 2; */
+}
+
+/* -- variant: with icon */
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile~="^icon"] tr {
+  grid-template: 1fr / var(--icon-column-width) var(--table-data-column-setting);
+}
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile~="^icon"] tr > td {
+  /* grid-column: 2 / 3; */
+}
+
+/* -- variant: with icon / controls */
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile~="^icon"][data-variant-mobile*="^controls"] tr {
+  grid-template:
+    1fr / 
+    var(--icon-column-width) var(--table-data-column-setting) minmax(var(--controls-column-width), max-content);
+}
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile*="^icon"] tr > td[data-part="icon"] {
+  /* grid-column: 1 / 2; */
+  grid-row: var(--merge-grid-rows);
+}
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile*="^controls"] tr > td[data-part="controls"] {
+  grid-column: -2 / -1;
+  grid-row: var(--merge-grid-rows);
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--color-interface-static-extra-light);
+  padding: var(--table-cell-padding);
+}
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile*="^controls"] tr > td[data-part="controls"][data-scope]:before {
+  content: none;
+}
+
+/* -- variant: controls-eor (end-of-row) */
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile~="^controls-eor"] tr {
+  grid-template: 
+    1fr / 
+    var(--table-data-column-setting);
+}
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile~="^controls-eor"] tr > td[data-part="controls"] {
+  grid-row: auto;
+  grid-column: 1 / -1;
+}
+
+table[data-styled][data-appearance-mobile="list-view"][data-variant-mobile~="^icon"][data-variant-mobile~="^controls-eor"] tr {
+  grid-template: 
+    1fr / 
+    var(--icon-column-width) var(--table-data-column-setting);
+}

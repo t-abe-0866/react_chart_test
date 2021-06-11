@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+:root {
+  font-size: 13px;
+  --content-area-width: 425px;
+  --global-header-height: 3.5rem;
+}
+
+
+body:not([data-state="not-logged-in"]) {
+  padding-top: var(--global-header-height);
+}
+
+.wfx {
+  width: var(--content-area-width);
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+}
+
+
+
+/*
+  Menu
+*/
+#slide-over-menu {
+  position: fixed;
+  left: calc(-1 * var(--content-area-width));
+  background: #ffffff;
+  max-width: calc(100vw * 0.9);
+  width: calc(var(--content-area-width) * 0.9);
+  max-height: calc(100vh - var(--default-margin));
+  /* height: calc(100vh - var(--global-header-height)); */
+  height: auto;
+  top: var(--global-header-height);
+  bottom: 0;
+  padding: calc(var(--default-margin) / 2);
+  box-sizing: border-box;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+  z-index: 3;
+
+  transition: left var(--default-transition-duration) ease-in-out;
+}
+
+#slide-over-menu[data-state="active"] {
+  left: 0;
+}
+
+#slide-over-menu [data-part="user-icon"] picture {
+  display: block;
+  text-align: center;
+}
+
+#slide-over-menu [data-part="user-icon"] picture img {
+  max-width: calc(100% / 3);
+}
+
+#slide-over-menu [data-part="user-name"] {
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-align: center;
+  margin: 1em 0 0 0;
+}
+
+#slide-over-menu button[data-part="close"] {
+  appearance: none;
+  -webkit-appearance: none;
+  font-size: 2rem;
+  line-height: 1;
+  background: none;
+  color: var(--color-interface-static-dark);
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 1em;
+  text-align: center;
+}
+
+#slide-over-menu ul {
+  --icon-rel-size: 0.75em;
+  --icon-space-multiplier: 3;
+
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: calc(var(--default-margin) / 2);
+  margin: 0;
+  padding: 0 0 var(--default-margin) 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--color-interface-static);
+}
+
+#slide-over-menu ul > li {
+  margin: 0 0 0 calc(var(--icon-rel-size) * var(--icon-space-multiplier));
+  text-indent: calc(var(--icon-rel-size) * var(--icon-space-multiplier) * -1);
+}
+
+#slide-over-menu ul .fa-stack {
+  font-size: var(--icon-rel-size);
+  width: calc( 1em * var(--icon-space-multiplier) );
+  text-indent: 0;
+}
+
+#slide-over-menu ul > li a {
+  text-decoration: none;
+  word-break: break-word;
+}
+
+#slide-over-menu-layout {
+  --calculated-spaces: calc(var(--default-margin) * 2 + var(--global-header-height) + 2.5rem);
+  /*
+    2.5rem: コントロール部の高さ
+  */
+  grid-template-rows: auto fit-content(calc(100vh - var(--calculated-spaces)));
+  height: 100%;
+}
+
+#slide-over-menu-body {
+  overflow: auto;
+}
+
+#slide-over-menu-body [data-grid-cell]:last-child ul {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+
+
+/*
+  Header
+*/
+#header [data-layout="arranger"][data-variant="main"] {
+  grid-template-columns: 8em auto 8em;
+  grid-gap: 0;
+  align-items: center;
+}
+
+[data-as-menu] li > a {
+  padding: 0 1em;
+}
+
+#header #personal-menu [data-as-menu] [data-menu-root] > a > label {
+  font-size: 1.25rem;
+}
+
+#header #personal-menu > [data-flex] {
+  justify-content: flex-end;
+}
+
+
+
+#header-user-icon {
+  font-size: 1rem;
+}
+
+#page-header {
+  /* grid-gap: calc(var(--default-margin) / 2); */
+  margin: 0 calc(var(--default-margin) / 2);
+}
+
+
+
+/*
+  Footer
+*/
+#page-footer {
+  --side: calc(var(--default-margin) / 2);
+  margin: var(--default-margin) var(--side) 0 var(--side);
+  padding: 0;
+}
+
+
+
+/*
+  Heading
+    h1: サイト名,
+    h2: ページ タイトル
+    として予約。
+*/
+#header h1#site-name {
+  padding: 0;
+}
+
+h2#page-name {
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+h3, h4, h5, h6 {
+  margin-bottom: 1em;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1em;
+  border-radius: 0;
+  /* font-weight: normal; */
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.125em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+
+
+/*
+  Main Content
+*/
+main {
+  background: #ffffff;
+  padding: var(--default-margin) 0;
+}
+
+#page-body {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+
+
+/*
+  later..
+*/
+#page-body .section-body {
+  padding: 0 1rem;
+}
+
+
+
+/*
+  Lab
+*/
+[data-if-display="desktop"] {
+  display: none;
+}
+
+[data-if-display="mobile"] {
+  display: block;
+}
+
+
+
+/*
+  if width...
+*/
+@media screen and (max-width: 425px) {
+  .wfx {
+    width: 100%;
+  }
+}

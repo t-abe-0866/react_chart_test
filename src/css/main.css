@@ -1,0 +1,467 @@
+@charset "UTF-8";
+
+
+
+:root {
+  -webkit-text-size-adjust: none;
+
+  touch-action: manipulation;
+}
+
+
+
+a, button {
+  outline: none
+}
+
+
+
+body:not([data-state="not-logged-in"]) {
+  padding-top: var(--global-header-height);
+}
+
+body[data-locked] {
+  overflow: hidden;
+}
+
+
+
+.wfx {
+  width: var(--content-area-width);
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0 calc(4rem * 0.8);
+}
+
+
+
+/*
+  Header
+*/
+#header {
+  --flex-space-size: 0.8rem;
+  --bottom-border-width: 1px;
+
+  --global-header-body-height: calc(var(--global-header-height) - var(--bottom-border-width));
+
+  font-size: 0.8rem;
+  background: #ffffff;
+  border-bottom: var(--bottom-border-width) solid var(--color-theme-green-medium);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#header i.separator:after {
+  content: '';
+  display: block;
+  background: #000000;
+  height: calc(100% - 1.5em);
+  width: 1px;
+  margin: 0.75em 1em;
+}
+
+
+
+/*
+  Footer
+*/
+#footer {
+  background: #ffffff;
+  border-top: 1px solid var(--color-theme-gray-light);
+}
+
+#copyright {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  padding: var(--default-margin) 1rem;
+  box-sizing: border-box;
+}
+
+
+/*
+  Def: Menu
+*/
+[data-as-menu] ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  white-space: nowrap;
+}
+
+[data-as-menu] ul > li {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+[data-as-menu] ul ul {
+  background: var(--color-theme-green-light);
+  position: absolute;
+  border-bottom: 2px solid var(--color-theme-green-medium);
+
+  transition: 
+    opacity var(--default-transition-duration) 0s,
+    top 0s var(--default-transition-duration),
+    left 0s var(--default-transition-duration);
+
+  opacity: 0;
+  left: -100vw;
+}
+
+[data-as-menu] :hover > ul,
+[data-as-menu] :hover + ul {
+  transition:
+    top 0s 0s,
+    left 0s 0s,
+    opacity var(--default-transition-duration) 0s;
+
+  top: var(--global-header-body-height);
+  left: 0;
+  opacity: 1;
+}
+
+[data-as-menu] [data-menu-root] ul {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+[data-as-menu] li > a {
+  display: flex;
+  height: var(--global-header-body-height);
+  align-items: center;
+  padding: 0 0.75em;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #000000;
+
+  transition: color var(--default-transition-duration), background var(--default-transition-duration);
+}
+
+[data-as-menu] li > a:hover {
+  background: var(--color-theme-green-medium);
+  color: #ffffff;
+}
+
+[data-as-menu] li > a:hover .fa-inverse {
+  color: var(--color-theme-green-medium);
+}
+
+[data-as-menu] li > a > label {
+  display: inline-block;
+  padding: 0.5em 0;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+[data-as-menu] li.has-sub-menu > a:after {
+  content: "\f105";
+  margin: 0;
+  right: 0;
+  flex-grow: 1;
+  text-align: right;
+  margin-left: 1em;
+}
+
+[data-as-menu] a + ul.sub-menu {
+  position: absolute;
+  left: 100%;
+  z-index: 1;
+  top: -100vh;
+}
+
+[data-as-menu] a:hover + ul.sub-menu,
+[data-as-menu] a + ul.sub-menu:hover {
+  top: 0;
+  z-index: 2;
+}
+
+[data-as-menu] [data-menu-root] > a:hover{
+  color: #000000;
+  background: var(--color-theme-green-light);
+}
+
+[data-as-menu] [data-menu-root] > a:before {
+  content: "\f0d8";
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--color-theme-green-medium);
+  width: 100%;
+  height: 0.75em;
+  text-align: center;
+  line-height: 1;
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  border-bottom: 1px solid var(--color-theme-green-medium);
+
+  transition: opacity 0.5s;
+}
+
+[data-as-menu] [data-menu-root] > a:hover:before {
+  opacity: 1;
+}
+
+
+
+#personal-menu [data-as-menu="user"] ul ul {
+  left: auto;
+  right: -100vw;
+}
+
+#personal-menu [data-as-menu="user"] :hover > ul,
+#personal-menu [data-as-menu="user"] :hover + ul {
+  right: 0;
+}
+
+#personal-menu [data-as-menu] [data-menu-root] > a > label {
+  font-size: 1rem;
+}
+
+#personal-menu [data-as-menu="user"] label {
+  margin-left: 0.5em;
+}
+
+#personal-menu [data-as-menu="user"] .icon > img {
+  height: 2em;
+}
+
+
+
+/*
+  Heading
+    h1: サイト名,
+    h2: ページ タイトル
+    として予約。
+*/
+section header {
+  margin-bottom: calc(0.75 * var(--default-margin));
+}
+
+#header h1#site-name {
+  padding: 0.5rem;
+  margin: 0;
+  text-align: center;
+}
+
+#header h1#site-name img {
+  height: calc( var(--global-header-body-height) - 1rem );
+}
+
+h2#page-name {
+  font-size: 1.75rem;
+  color: var(--color-theme-green);
+  margin: 0;
+}
+
+h3, h4, h5, h6 {
+  margin-bottom: 1em;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1.5em;
+  color: #ffffff;
+  background: var(--color-theme-green);
+  padding: 0.5em;
+  line-height: 1;
+  border-radius: var(--default-border-radius);
+  margin-bottom: var(--default-margin);
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.125em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+
+
+/*
+  Main Content
+*/
+:link, :visited {
+  color: var(--color-theme-green);
+}
+
+main {
+  background: var(--color-theme-gray-background);
+  padding: var(--global-header-height) 0;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+#page-body {
+  
+}
+
+[data-grid-cell] > header :last-child {
+  margin-bottom: 0;
+}
+
+[data-grid-cell] section:first-child {
+  margin-top: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+label {
+  word-break: break-word;
+  /* vertical-align: middle; */
+}
+
+table {
+  position: relative;
+}
+
+
+
+/*
+  Lab
+*/
+[data-if-display="desktop"] {
+
+}
+
+[data-if-display="mobile"] {
+  display: none;
+}
+
+
+/*
+  overrides
+*/
+
+/* -- JS-Lib: FullCalendar */
+[data-js-lib="fullcalendar"] h2 {
+  font-size: 1.25rem !important;
+}
+
+main .fc-button-primary:disabled {
+  color: #fff;
+  background-color: var(--color-interface-theme);
+  border-color: var(--color-interface-theme);
+}
+
+main .fc-button:disabled {
+  opacity: 0.65;
+}
+
+main .fc-button-primary {
+  color: #fff;
+  background-color: var(--color-interface-theme);
+  border-color: var(--color-interface-theme);
+}
+
+main .fc-button-primary:hover {
+  background-color: var(--color-interface-theme-dark);
+  border-color: var(--color-interface-theme-dark);
+}
+
+main .fc-unthemed td.fc-today {
+  background: var(--color-theme-green-light);
+}
+
+main .fc-button-primary:not(:disabled):active,
+main .fc-button-primary:not(:disabled).fc-button-active {
+  background-color: var(--color-interface-theme-dark);
+  border-color: var(--color-interface-theme-dark);
+}
+
+/* -- JS-Lib: FullCalendar */
+body .flatpickr-current-month {
+  display: grid;
+  grid-template: "year month" auto / auto auto;
+  justify-content: center;
+  align-content: center;
+  height: auto;
+  width: auto;
+  position: relative;
+  left: auto;
+}
+
+body .flatpickr-current-month .flatpickr-monthDropdown-months {
+  grid-area: month;
+}
+
+body .flatpickr-current-month .numInputWrapper {
+  grid-area: year;
+}
+
+body .flatpickr-day {
+  border-radius: var(--default-border-radius);
+}
+
+body .flatpickr-day.selected,
+body .flatpickr-day.startRange,
+body .flatpickr-day.endRange,
+body .flatpickr-day.selected.inRange,
+body .flatpickr-day.startRange.inRange,
+body .flatpickr-day.endRange.inRange,
+body .flatpickr-day.selected:focus,
+body .flatpickr-day.startRange:focus,
+body .flatpickr-day.endRange:focus,
+body .flatpickr-day.selected:hover,
+body .flatpickr-day.startRange:hover,
+body .flatpickr-day.endRange:hover,
+body .flatpickr-day.selected.prevMonthDay,
+body .flatpickr-day.startRange.prevMonthDay,
+body .flatpickr-day.endRange.prevMonthDay,
+body .flatpickr-day.selected.nextMonthDay,
+body .flatpickr-day.startRange.nextMonthDay,
+body .flatpickr-day.endRange.nextMonthDay {
+  background: var(--color-interface-theme);
+  border-color: var(--color-interface-theme);
+}
+
+/* -- JS-Lib: swyper */
+[data-js-lib="swiper"][data-js-lib-variant~="pagination"] .swiper-container {
+  padding-bottom: var(--default-margin);
+}
+
+[data-js-lib="swiper"][data-js-lib-variant~="navigation"] .swiper-container {
+}
+
+[data-js-lib="swiper"] .add-navigation-safe-area {
+  width: calc(100% - var(--default-margin) * 4);
+  margin: auto;
+}
+
+.swiper-button-next:after,
+.swiper-container-rtl,
+.swiper-button-prev:after {
+  font-size: 2rem !important;
+  color: var(--color-interface-static-dark);
+}
+.swiper-button-next,
+.swiper-button-prev {
+  width: auto !important;
+}
+
+
+
+/*
+  Examles
+*/
+[data-layout="graph"] .chartjs-render-monitor {
+  width: 100% !important;
+  height: auto !important;
+}

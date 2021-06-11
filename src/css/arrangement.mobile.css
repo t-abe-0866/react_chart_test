@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+
+
+/*
+  Text
+*/
+[data-arrangement-mobile~="text-align-center"] {
+  text-align: center;
+}
+
+[data-arrangement-mobile~="text-align-left"] {
+  text-align: left;
+}
+
+[data-arrangement-mobile~="text-align-right"] {
+  text-align: right;
+}
+
+
+
+/*
+  Flex, Grid
+*/
+
+/* -- align: */
+
+  /* ---- content: */
+
+  [data-arrangement-mobile~="align-content-center"] {
+    align-content: center;
+  }
+
+  [data-arrangement-mobile~="align-content-start"] {
+    align-content: flex-start;
+  }
+
+  [data-arrangement-mobile~="align-content-end"] {
+    align-content: flex-end;
+  }
+
+  /* ---- items: */
+
+  [data-arrangement-mobile~="align-items-center"] {
+    align-items: center;
+  }
+
+  [data-arrangement-mobile~="align-items-start"] {
+    align-items: flex-start;
+  }
+
+  [data-arrangement-mobile~="align-items-end"] {
+    align-items: flex-end;
+  }
+
+  /* ---- self: */
+
+  [data-arrangement-mobile~="align-self-center"] {
+    align-self: center;
+  }
+
+  [data-arrangement-mobile~="align-self-start"] {
+    align-self: flex-start;
+  }
+
+  [data-arrangement-mobile~="align-self-end"] {
+    align-self: flex-end;
+  }
+
+
+
+/* -- justify: */
+
+  /* ---- content: */
+
+  [data-arrangement-mobile~="justify-content-center"] {
+    justify-content: center;
+  }
+
+  [data-arrangement-mobile~="justify-content-start"] {
+    justify-content: flex-start;
+  }
+
+  [data-arrangement-mobile~="justify-content-end"] {
+    justify-content: flex-end;
+  }
+
+  /* ---- items: */
+
+  [data-arrangement-mobile~="justify-items-center"] {
+    justify-items: center;
+  }
+
+  [data-arrangement-mobile~="justify-items-start"] {
+    justify-items: flex-start;
+  }
+
+  [data-arrangement-mobile~="justify-items-end"] {
+    justify-items: flex-end;
+  }
+
+  /* ---- self: */
+
+  [data-arrangement-mobile~="justify-self-center"] {
+    justify-self: center;
+  }
+
+  [data-arrangement-mobile~="justify-self-start"] {
+    justify-self: flex-start;
+  }
+
+  [data-arrangement-mobile~="justify-self-end"] {
+    justify-self: flex-end;
+  }

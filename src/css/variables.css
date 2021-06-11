@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/*
+  Site-wide Variables
+*/
+:root {
+  /*
+    Defaults
+  */
+  font-size: 15px;
+
+  --default-margin: 2rem;
+  --default-border-radius: 0.25rem;
+  --default-transition-duration: 0.25s;
+  --default-line-height: 1.5;
+
+  --flex-space-size: 1rem;
+  --content-area-width: 1200px;
+
+  --global-header-height: calc(4rem * 0.8);
+
+  /* UI */
+    --ui-checkbox-scaling: 1.25;
+
+    --ui-button-scaling: 1;
+
+    --ui-icon-scaling: 1.5;
+
+
+
+  /*
+    Theme Colors
+  */
+  --color-theme-green: hsl(145, 100%, 28%);
+  --color-theme-green-light: hsl(79, 57%, 95%);
+  --color-theme-green-medium: hsl(80, 73%, 44%);
+  --color-theme-green-dark: hsl(80, 73%, 44%);
+
+  --color-theme-gray-background: 	hsl(0, 0%, 95%);
+
+  --color-theme-gray:	hsl(0, 0%, 60%);
+  --color-theme-gray-light:	hsl(0, 0%, 85%);
+  --color-theme-gray-dark: hsl(0, 0%, 30%);
+
+
+
+  /*
+    Interface Colors
+  */
+  --color-interface-theme: var(--color-theme-green);
+  --color-interface-theme-dark: hsl(145, 100%, 20%);
+  --color-interface-theme-light: hsl(145, 100%, 34%);
+
+  --color-interface-static: var(--color-theme-gray);
+  --color-interface-static-dark: hsl(0, 0%, 40%);
+  --color-interface-static-light: var(--color-theme-gray-light);
+  --color-interface-static-extra-light: hsl(0, 0%, 94%);
+  --color-interface-static-extreme-light: hsl(0, 0%, 98%);
+
+  --color-interface-credential: hsl(207, 100%, 50%);
+  --color-interface-credential-dark: hsl(207, 100%, 25%);
+  --color-interface-credential-light: hsl(207, 100%, 42%);
+
+  --color-interface-ok: var(--color-interface-theme);
+  --color-interface-ok-dark: var(--color-interface-theme-dark);
+  --color-interface-ok-light: var(--color-interface-theme-light);
+
+  --color-interface-moderate: hsl(32, 93%, 54%);
+  --color-interface-moderate-dark: hsl(32, 93%, 45%);
+  --color-interface-moderate-light: hsl(32, 93%, 59%);
+
+  --color-interface-warn: hsl(358, 85%, 52%);
+  --color-interface-warn-dark: hsl(358, 85%, 40%);
+  --color-interface-warn-light: hsl(358, 95%, 65%);
+
+  --color-interface-table-row-accent: hsl(145, 12%, 98%);
+}

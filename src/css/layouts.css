@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+
+
+/*
+  Arranger
+*/
+[data-layout="arranger"] {
+  display: grid;
+  grid-template: "left center right" auto;
+  grid-auto-columns: auto;
+  grid-gap: calc( var(--default-margin) / 2 );
+  justify-content: space-between;
+}
+
+[data-layout="arranger"] > [data-position] {
+  line-height: 1;
+}
+
+[data-layout="arranger"] > [data-position="left"] {
+  grid-area: left;
+}
+
+[data-layout="arranger"] > [data-position="center"] {
+  grid-area: center;
+}
+
+[data-layout="arranger"] > [data-position="right"] {
+  grid-area: right;
+}
+
+
+
+/*
+  Graph
+*/
+[data-layout="graph"] {
+  --gap: var(--default-margin);
+
+  display: grid;
+  grid-template: auto / 1fr;
+  grid-gap: var(--gap);
+}
+
+[data-layout="graph"] > [data-part="body-items"] {
+  --sides: calc(var(--default-margin) * 1.25);
+
+  display: grid;
+  grid-template-columns: var(--sides) minmax(0, auto) var(--sides);
+  grid-template-areas: 
+    "nav-left graph nav-right"
+    ". locator .";
+  grid-gap: calc(var(--default-margin) / 2);
+  align-items: center;
+  text-align: center;
+}
+
+[data-layout="graph"][data-variant~="no-side-navigations"] > [data-part="body-items"] {
+  grid-template-columns: minmax(0, auto);
+  grid-template-areas: 
+    "graph"
+    "locator";
+}
+
+[data-layout="graph"] > [data-part="body-items"] [data-part="nav-left"] {
+  grid-area: nav-left;
+}
+
+[data-layout="graph"] > [data-part="body-items"] [data-part="nav-right"] {
+  grid-area: nav-right;
+}
+
+[data-layout="graph"] > [data-part="body-items"] [data-part="graph"] {
+  grid-area: graph;
+}
+
+[data-layout="graph"] > [data-part="body-items"] [data-part="locator"] {
+  grid-area: locator;
+}
+
+[data-layout="graph"] > [data-part="footer-items"] {
+  --footer-items-gap: calc(var(--gap) * 0.75);
+  display: grid;
+  grid-template: auto / 1fr;
+  grid-gap: var(--footer-items-gap);
+}
+
+[data-layout="graph"] > [data-part="footer-items"] > [data-part="item"] {
+  padding: 0 0 var(--footer-items-gap) 0;
+  border-bottom: 1px solid var(--color-interface-static-light);
+}
+
+[data-layout="graph"] > [data-part="footer-items"] > [data-part="item"]:last-of-type {
+  padding-bottom: 0;
+  border: none;
+}

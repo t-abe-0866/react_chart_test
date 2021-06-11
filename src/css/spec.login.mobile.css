@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+
+h1#site-name img {
+  height: 2rem;
+  margin: 0;
+}
+
+main {
+  background: var(--color-theme-green);
+  padding: 0;
+}
+
+#layout {
+  width: calc(100vw - var(--default-margin) * 2);
+}
+
+#credentials {
+  padding: calc(var(--default-margin) / 2);
+}

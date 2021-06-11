@@ -1,0 +1,434 @@
+@charset "UTF-8";
+
+[data-flex~="debug"] {
+  background: rgba(255,0,0,0.1);
+}
+
+[data-flex~="debug"] > [data-flex-item] {
+  background: rgba(0,0,255,0.1);
+}
+
+
+
+[data-flex] {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-size: var(--flex-space-size);
+  
+  box-sizing: border-box;
+  width: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+[data-flex][data-flex~="v-fill"] {
+  height: 100%;
+}
+
+ul[data-flex], ul [data-flex-item],
+ol[data-flex], ol [data-flex-item] {
+  list-style: none;
+}
+
+[data-flex~="row"] {
+  flex-direction: row;
+}
+
+[data-flex~="column"] {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+[data-flex] > [data-flex-item] {
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+  /* z-index: 1; */
+
+  transition: flex-basis 0.25s 0.25s;
+}
+
+/* 
+[data-flex] > [data-flex-item] :last-child {
+  margin-bottom: 0;
+}
+*/
+[data-flex] > [data-flex-item] > :last-child {
+  margin-bottom: 0;
+}
+
+[data-flex] > [data-flex-item] > :last-child :last-child {
+  margin-bottom: 0;
+}
+
+[data-flex] > [data-flex-item] > * {
+  font-size: 1rem;
+  font-size: var(--flex-space-size);
+}
+
+
+
+[data-flex~="separate"][data-flex-spacing~="1"] {
+  font-size: 1rem;
+  font-size: calc( var(--flex-space-size) * 1 );
+}
+
+[data-flex~="separate"][data-flex-spacing~="2"] {
+  font-size: 2rem;
+  font-size: calc( var(--flex-space-size) * 2 );
+}
+
+[data-flex~="separate"][data-flex-spacing~="3"] {
+  font-size: 3rem;
+  font-size: calc( var(--flex-space-size) * 3 );
+}
+
+[data-flex~="separate"][data-flex-spacing~="4"] {
+  font-size: 4rem;
+  font-size: calc( var(--flex-space-size) * 4 );
+}
+
+
+
+[data-flex-item][data-flex-order~="1"] {
+  order: 1;
+}
+
+[data-flex-item][data-flex-order~="2"] {
+  order: 2;
+}
+
+[data-flex-item][data-flex-order~="3"] {
+  order: 3;
+}
+
+
+
+[data-flex][data-flex-align~="flex-start"] {
+  align-items: flex-start;
+}
+
+[data-flex][data-flex-align~="center"] {
+  align-items: center;
+}
+
+[data-flex][data-flex-align~="stretch"] {
+  align-items: stretch;
+}
+
+[data-flex][data-flex-align~="flex-end"] {
+  align-items: flex-end;
+}
+
+
+
+[data-flex-item][data-flex-align~="flex-start"] {
+  align-self: flex-start;
+}
+
+[data-flex-item][data-flex-align~="center"] {
+  align-self: center;
+}
+
+[data-flex-item][data-flex-align~="stretch"] {
+  align-self: stretch;
+}
+
+[data-flex-item][data-flex-align~="flex-end"] {
+  align-self: flex-end;
+}
+
+
+
+[data-flex][data-flex-justify~="center"] {
+  justify-content: center;
+}
+
+[data-flex][data-flex-justify~="flex-start"] {
+  justify-content: flex-start;
+}
+
+[data-flex][data-flex-justify~="flex-end"] {
+  justify-content: flex-end;
+}
+
+[data-flex][data-flex-justify~="space-around"] {
+  justify-content: space-around;
+}
+
+
+
+[data-flex][data-flex-wrap~="nowrap"] {
+  flex-wrap: nowrap;
+}
+
+[data-flex][data-flex-wrap~="wrap"] {
+  flex-wrap: wrap;
+}
+
+
+
+[data-flex-group] {
+  overflow: hidden;
+}
+
+
+
+/*
+  Normal
+*/
+[data-flex] > [data-flex-item~="hide"] {
+  display: none;
+}
+
+[data-flex] > [data-flex-item~="10"] {
+  flex-basis: 10%;
+}
+
+[data-flex] > [data-flex-item~="20"] {
+  flex-basis: 20%;
+}
+
+[data-flex] > [data-flex-item~="25"] {
+  flex-basis: 25%;
+}
+
+[data-flex] > [data-flex-item~="30"] {
+  flex-basis: 30%;
+}
+
+[data-flex] > [data-flex-item~="33"] {
+  flex-basis: calc(100% / 3);
+}
+
+[data-flex] > [data-flex-item~="40"] {
+  flex-basis: 40%;
+}
+
+[data-flex] > [data-flex-item~="50"] {
+  flex-basis: 50%;
+}
+
+[data-flex] > [data-flex-item~="60"] {
+  flex-basis: 60%;
+}
+
+[data-flex] > [data-flex-item~="66"] {
+  flex-basis: calc(100% / 3 * 2);
+}
+
+[data-flex] > [data-flex-item~="70"] {
+  flex-basis: 70%;
+}
+
+[data-flex] > [data-flex-item~="75"] {
+  flex-basis: 75%;
+}
+
+[data-flex] > [data-flex-item~="80"] {
+  flex-basis: 80%;
+}
+
+[data-flex] > [data-flex-item~="90"] {
+  flex-basis: 90%;
+}
+
+[data-flex] > [data-flex-item~="100"] {
+  flex-basis: 100%;
+}
+
+
+
+/*
+  Separate
+*/
+[data-flex~="separate"] {
+  margin-top: -1em;
+  overflow: hidden;
+}
+
+[data-flex~="separate"][data-flex~="v-fill"] {
+  height: calc(100% + 1em);
+}
+
+[data-flex~="separate"] + [data-flex~="separate"] {
+  margin-top: 0;
+}
+
+[data-flex~="separate"] > [data-flex-item] {
+  flex-grow: 0;
+  margin-top: 1em;
+}
+
+[data-flex~="separate"] > [data-flex-item~="0"] {
+  flex-basis: 0;
+  overflow: hidden;
+}
+
+[data-flex~="separate"] > [data-flex-item~="10"] {
+  flex-basis: calc(10% - 0.9em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="20"] {
+  flex-basis: calc(20% - 0.8em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="25"] {
+  flex-basis: calc(25% - 0.75em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="30"] {
+  flex-basis: calc(30% - 0.7em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="33"] {
+  flex-basis: calc( (100% / 3) - (2em / 3) );
+}
+
+[data-flex~="separate"] > [data-flex-item~="40"] {
+  flex-basis: calc(40% - 0.6em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="50"] {
+  flex-basis: calc(50% - 0.5em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="60"] {
+  flex-basis: calc(60% - 0.4em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="66"] {
+  flex-basis: calc( (100% / 3 * 2) - (1em / 3) );
+}
+
+[data-flex~="separate"] > [data-flex-item~="70"] {
+  flex-basis: calc(70% - 0.3em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="75"] {
+  flex-basis: calc(75% - 0.25em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="80"] {
+  flex-basis: calc(80% - 0.2em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="90"] {
+  flex-basis: calc(90% - 0.1em);
+}
+
+[data-flex~="separate"] > [data-flex-item~="100"] {
+  flex-basis: 100%;
+}
+
+
+
+/*
+  Regular Intervals
+*/
+[data-flex~="reg-int"] {
+  justify-content: flex-start;
+}
+
+
+
+[data-flex~="reg-int"][data-flex-div~="1"] > [data-flex-item] {
+  flex-basis: 100%;
+}
+
+[data-flex~="reg-int"][data-flex-div~="2"] > [data-flex-item] {
+  flex-basis: calc(100% / 2);
+}
+
+[data-flex~="reg-int"][data-flex-div~="3"] > [data-flex-item] {
+  flex-basis: calc(100% / 3);
+}
+
+[data-flex~="reg-int"][data-flex-div~="4"] > [data-flex-item] {
+  flex-basis: calc(100% / 4);
+}
+
+[data-flex~="reg-int"][data-flex-div~="5"] > [data-flex-item] {
+  flex-basis: calc(100% / 5);
+}
+
+[data-flex~="reg-int"][data-flex-div~="6"] > [data-flex-item] {
+  flex-basis: calc(100% / 6);
+}
+
+[data-flex~="reg-int"][data-flex-div~="7"] > [data-flex-item] {
+  flex-basis: calc(100% / 7);
+}
+
+[data-flex~="reg-int"][data-flex-div~="8"] > [data-flex-item] {
+  flex-basis: calc(100% / 8);
+}
+
+
+
+/*
+  Regular Intervals - Separate
+*/
+[data-flex~="reg-int"][data-flex~="separate"] {
+  margin-right: -1em;
+}
+
+[data-flex~="reg-int"][data-flex~="separate"] > [data-flex-item] {
+  margin-right: 1em;
+}
+
+[data-flex~="reg-int"][data-flex~="separate"][data-flex-div~="1"] > [data-flex-item] {
+  flex-basis: calc(100% - 1em);
+}
+
+[data-flex~="reg-int"][data-flex~="separate"][data-flex-div~="2"] > [data-flex-item] {
+  flex-basis: calc(100% / 2 - 1em);
+}
+
+[data-flex~="reg-int"][data-flex~="separate"][data-flex-div~="3"] > [data-flex-item] {
+  flex-basis: calc(100% / 3 - 1em);
+}
+
+[data-flex~="reg-int"][data-flex~="separate"][data-flex-div~="4"] > [data-flex-item] {
+  flex-basis: calc(100% / 4 - 1em);
+}
+
+[data-flex~="reg-int"][data-flex~="separate"][data-flex-div~="5"] > [data-flex-item] {
+  flex-basis: calc(100% / 5 - 1em);
+}
+
+[data-flex~="reg-int"][data-flex~="separate"][data-flex-div~="6"] > [data-flex-item] {
+  flex-basis: calc(100% / 6 - 1em);
+}
+
+[data-flex~="reg-int"][data-flex~="separate"][data-flex-div~="7"] > [data-flex-item] {
+  flex-basis: calc(100% / 7 - 1em);
+}
+
+[data-flex~="reg-int"][data-flex~="separate"][data-flex-div~="8"] > [data-flex-item] {
+  flex-basis: calc(100% / 8 - 1em);
+}
+
+
+
+[data-flex~="auto"] > [data-flex-item],
+[data-flex] > [data-flex-item~="auto"] {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+[data-flex~="auto-fill"] > [data-flex-item],
+[data-flex] > [data-flex-item~="auto-fill"] {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+}

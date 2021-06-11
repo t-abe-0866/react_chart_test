@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+
+
+#page-body [data-grid-cell].summary-heading {
+  border-color: var(--color-interface-theme);
+  border-width: 2px;
+}
+
+
+
+[data-spec-component="summary-heading"] {
+  --local-spacing: calc(var(--default-margin) / 2);
+
+  display: grid;
+  grid-template:
+    "icon heading-id datetime" auto
+    "icon heading-name datetime" auto
+      / calc(var(--default-margin) * 2) auto auto;
+  grid-gap: calc(var(--local-spacing) / 2) var(--local-spacing);
+}
+
+[data-spec-component="summary-heading"] h3 {
+  background: transparent;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+[data-spec-component="summary-heading"] [data-part="icon"] {
+  grid-area: icon;
+}
+
+[data-spec-component="summary-heading"] [data-part="heading-id"] {
+  grid-area: heading-id;
+  align-self: center;
+}
+
+[data-spec-component="summary-heading"] [data-part="heading-name"] {
+  grid-area: heading-name;
+  align-self: center;
+}
+
+[data-spec-component="summary-heading"] [data-part="datetime"] {
+  grid-area: datetime;
+  justify-self: right;
+  align-self: end;
+}
+
+
+
+
+#schedule h3,
+#information h3,
+#messages h3 {
+  background: transparent;
+  color: #000000;
+  padding: 0;
+}
+
+#schedule h3 .fa-stack,
+#information h3 .fa-stack,
+#messages h3 .fa-stack {
+  width: 2em;
+}
+
+#schedule h3 .fa-stack .fa-circle,
+#information h3 .fa-stack .fa-circle,
+#messages h3 .fa-stack .fa-circle {
+  color: var(--color-interface-theme-light);
+}
+
+
+
+
+
+#information ol > li time:before,
+#messages ol > li time:before {
+  content: '\f111';
+  font-size: inherit;
+  font-weight: 900;
+  color: var(--color-interface-theme-light);
+  margin: 0 0.25em 0 0;
+}
+
+
+
+
+#fields {
+  position: relative;
+}
+
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-slide {
+  width: 75%;
+  padding: 0 0 var(--default-margin) 0;
+}
+
+.swiper-pagination {
+}
+
+
+[data-spec-component="field-card"] {
+  display: block;
+  text-decoration: none;
+}
+
+[data-spec-component="field-card"] figure [data-part="place-image"] {
+  display: block;
+  position: relative;
+}
+
+[data-spec-component="field-card"] figure [data-part="place-image"]:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+[data-spec-component="field-card"] figure img {
+  display: blokc;
+  border-top: 0.25em solid var(--color-interface-theme);
+  border-radius: var(--default-border-radius);
+}
+
+[data-spec-component="field-card"] figcaption > * {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}

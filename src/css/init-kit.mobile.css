@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+
+
+/*
+  Display conditions
+*/
+[data-if-display="desktop"] {
+  display: none;
+}
+
+[data-if-display="mobile"] {
+  display: block;
+}

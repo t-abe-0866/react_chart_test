@@ -11,6 +11,7 @@ function App() {
         <Link to={`/test_chart1`}>Scatter Plot</Link>
         <Link to={`/chart2`}>Line Chart</Link>
         <Link to={`/tooltip`}>tooltip</Link>
+        <Link to={`/chart3`}>chart3</Link>
       </header>
     </div>
   );

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+
+
+body {
+  --profile-icon-size: 8em;
+}
+
+
+
+#page-body {
+  width: auto;
+}
+
+
+
+[data-spec-component="attachments"][data-variant="image-list"] [data-part="items"] > li {
+  max-width: none;
+}

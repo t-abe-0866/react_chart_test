@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+
+
+/*
+  Menu
+*/
+
+
+
+/*
+  Section
+*/
+section,
+[data-as="section"] {
+  margin: 0 0 calc(var(--default-margin) * 2) 0;
+}
+
+section > :last-child,
+[data-as="section"] > :last-child {
+  margin-bottom: 0;
+}
+
+section section,
+section [data-as="section"],
+[data-as="section"] [data-as="section"],
+[data-as="section"] section {
+  margin-top: calc(var(--default-margin) * 2)
+}
